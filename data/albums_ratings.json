@@ -1,0 +1,62 @@
+[
+    {
+        "name": "The Wall",
+        "positive_votes": 179,
+        "negative_votes": 0
+    },
+    {
+        "name": "Meddle",
+        "positive_votes": 179,
+        "negative_votes": 0
+    },
+    {
+        "name": "Atom Heart Mother",
+        "positive_votes": 133,
+        "negative_votes": 0
+    },
+    {
+        "name": "The Piper at the gates of Dawn",
+        "positive_votes": 87,
+        "negative_votes": 0
+    },
+    {
+        "name": "The Division Bell",
+        "positive_votes": 75,
+        "negative_votes": 0
+    },
+    {
+        "name": "Obscured by Clouds",
+        "positive_votes": 52,
+        "negative_votes": 0
+    },
+    {
+        "name": "A Saucerful of Secrets",
+        "positive_votes": 42,
+        "negative_votes": 0
+    },
+    {
+        "name": "The Final Cut",
+        "positive_votes": 31,
+        "negative_votes": 44
+    },
+    {
+        "name": "A Momentary Lapse of Reason",
+        "positive_votes": 13,
+        "negative_votes": 76
+    },
+    {
+        "name": "Ummagumma",
+        "positive_votes": 11,
+        "negative_votes": 38
+    },
+    {
+        "name": "More",
+        "positive_votes": 11,
+        "negative_votes": 31
+    },
+    {
+        "name": "The Endless River",
+        "positive_votes": 2,
+        "negative_votes": 130
+    }
+]
