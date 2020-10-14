@@ -1,9 +1,10 @@
 import os
 from functions.messages import get_random_exit_message, get_random_prompt_message
-from functions.procedures import calculate_votes, generate_songs_json, print_albums_ranking
+from functions.votes_processor import VotesProcessor
 
 
 if __name__ == '__main__':
+    processor = VotesProcessor()
     print("\n-- PINK FLOYD 'COMFORTABLY POSTING' POLLS RESULTS DATA PROCESSOR --")
     while True:
         print("\n{}".format(get_random_prompt_message()))
@@ -14,11 +15,11 @@ if __name__ == '__main__':
         choice = input("Enter your choice: ").upper()
 
         if choice == "A":
-            print_albums_ranking()
+            processor.print_albums_ranking()
         elif choice == "S":
-            generate_songs_json()
+            processor.generate_songs_json()
         elif choice == "V":
-            calculate_votes()
+            processor.calculate_votes()
         elif choice == "Q":
             break
         else:

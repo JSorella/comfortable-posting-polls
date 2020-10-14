@@ -1,7 +1,32 @@
 [
     {
+        "name": "One of These Days",
+        "positive_votes": 0,
+        "negative_votes": 0
+    },
+    {
+        "name": "A Pillow of Winds",
+        "positive_votes": 0,
+        "negative_votes": 0
+    },
+    {
+        "name": "Fearless",
+        "positive_votes": 0,
+        "negative_votes": 0
+    },
+    {
+        "name": "San Tropez",
+        "positive_votes": 0,
+        "negative_votes": 0
+    },
+    {
         "name": "Seamus",
         "positive_votes": 0,
         "negative_votes": 25
+    },
+    {
+        "name": "Echoes",
+        "positive_votes": 0,
+        "negative_votes": 0
     }
 ]
