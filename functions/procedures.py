@@ -1,11 +1,14 @@
 import glob
 import os
 
-from utils import get_fixture_content, get_tracks_in_json_format, save_dict_to_json_file
+from functions.utils import get_fixture_content, get_tracks_in_json_format, save_dict_to_json_file
+from pathlib import Path
+
+DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def print_albums_ranking():
-    albums = get_fixture_content('data/albums_ratings.json')
+    albums = _get_albums()
     ranking = []
     for album in albums:
         raw_score = album["positive_votes"] - album["negative_votes"]
@@ -23,7 +26,7 @@ def generate_songs_json():
     album_title = input("Enter album title: ").lower().replace(' ', '_')
     tracks = [track.strip() for track in tracks_in_str.split(",")]
     tracks_with_votes_parameters = get_tracks_in_json_format(tracks)
-    file_path = 'data/albums/{}.json'.format(album_title)
+    file_path = _get_data_file_path('albums/{}.json'.format(album_title))
     save_dict_to_json_file(tracks_with_votes_parameters, file_path)
     print("Done! File should be saved here: {}".format(file_path))
 
@@ -36,7 +39,7 @@ def calculate_votes():
 def calculate_albums_votes():
     total_positive_votes = 0
     total_negative_votes = 0
-    albums = get_fixture_content('data/albums_ratings.json')
+    albums = _get_albums()
 
     for album in albums:
         total_positive_votes += album["positive_votes"]
@@ -51,7 +54,7 @@ def calculate_tracks_votes():
     total_positive_votes = 0
     total_negative_votes = 0
 
-    path = 'data/albums/'
+    path = _get_data_file_path('albums')
     for filename in glob.glob(os.path.join(path, '*.json')):
         album_tracks = get_fixture_content(filename)
 
@@ -62,3 +65,11 @@ def calculate_tracks_votes():
     print("* Total positive votes for tracks: {}".format(total_positive_votes))
     print("* Total negative votes for tracks: {}".format(total_negative_votes))
     print("* Total votes for tracks: {}".format(total_positive_votes + total_negative_votes))
+
+
+def _get_data_file_path(file_name):
+    return (Path(DIR) / '..' / 'data' / file_name).resolve()
+
+
+def _get_albums():
+    return get_fixture_content(_get_data_file_path('albums_ratings.json'))

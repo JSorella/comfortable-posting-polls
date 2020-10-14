@@ -1,5 +1,6 @@
-from messages import get_random_exit_message, get_random_prompt_message
-from procedures import calculate_votes, generate_songs_json, print_albums_ranking
+import os
+from functions.messages import get_random_exit_message, get_random_prompt_message
+from functions.procedures import calculate_votes, generate_songs_json, print_albums_ranking
 
 
 if __name__ == '__main__':
