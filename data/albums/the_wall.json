@@ -10,12 +10,7 @@
         "negative_votes": 0
     },
     {
-        "name": "Another Brick In The Wall",
-        "positive_votes": 0,
-        "negative_votes": 0
-    },
-    {
-        "name": "Part 1",
+        "name": "Another Brick In The Wall (part 1)",
         "positive_votes": 0,
         "negative_votes": 0
     },
@@ -25,14 +20,9 @@
         "negative_votes": 0
     },
     {
-        "name": "Another Brick In The Wall",
+        "name": "Another Brick In The Wall (part 2)",
         "positive_votes": 0,
-        "negative_votes": 0
-    },
-    {
-        "name": "Part 2",
-        "positive_votes": 0,
-        "negative_votes": 0
+        "negative_votes": 5
     },
     {
         "name": "Mother",
@@ -65,22 +55,12 @@
         "negative_votes": 0
     },
     {
-        "name": "Another Brick In The Wall",
+        "name": "Another Brick In The Wall (part 3)",
         "positive_votes": 0,
         "negative_votes": 0
     },
     {
-        "name": "Part 3",
-        "positive_votes": 0,
-        "negative_votes": 0
-    },
-    {
-        "name": "Goodbye",
-        "positive_votes": 0,
-        "negative_votes": 0
-    },
-    {
-        "name": "Cruel World",
+        "name": "Goodbye, Cruel World",
         "positive_votes": 0,
         "negative_votes": 0
     },
@@ -107,7 +87,7 @@
     {
         "name": "Bring The Boys Back Home",
         "positive_votes": 0,
-        "negative_votes": 0
+        "negative_votes": 5
     },
     {
         "name": "Comfortably Numb",
@@ -127,7 +107,7 @@
     {
         "name": "Run Like Hell",
         "positive_votes": 0,
-        "negative_votes": 0
+        "negative_votes": 2
     },
     {
         "name": "Waiting For The Worms",

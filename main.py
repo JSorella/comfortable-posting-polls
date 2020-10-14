@@ -4,7 +4,7 @@ from functions.procedures import calculate_votes, generate_songs_json, print_alb
 
 
 if __name__ == '__main__':
-    print("\n-- PINK FLOYD 'COMFORTABLE POSTING' POLLS RESULTS DATA PROCESSOR --")
+    print("\n-- PINK FLOYD 'COMFORTABLY POSTING' POLLS RESULTS DATA PROCESSOR --")
     while True:
         print("\n{}".format(get_random_prompt_message()))
         print("A - Get the most disliked albums ranking.")

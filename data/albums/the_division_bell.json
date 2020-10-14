@@ -2,12 +2,12 @@
     {
         "name": "Cluster One",
         "positive_votes": 0,
-        "negative_votes": 0
+        "negative_votes": 1
     },
     {
         "name": "What Do You Want From Me",
         "positive_votes": 0,
-        "negative_votes": 0
+        "negative_votes": 9
     },
     {
         "name": "Poles Apart",
@@ -27,7 +27,7 @@
     {
         "name": "Wearing the in side Out",
         "positive_votes": 0,
-        "negative_votes": 0
+        "negative_votes": 4
     },
     {
         "name": "Take It Back",
@@ -37,7 +37,7 @@
     {
         "name": "Coming Back to Life",
         "positive_votes": 0,
-        "negative_votes": 0
+        "negative_votes": 2
     },
     {
         "name": "Keep Talking",
