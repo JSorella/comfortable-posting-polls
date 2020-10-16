@@ -158,4 +158,4 @@ common-sense listen-able order:
  I hate to include `What do you want from me`,  `Several Species` and `Another Brick in the Wall pt.2` here, I love that tracks, but this is what people 
  have chose.
  
- I hope you enjoy "The Worst of Pink Floyd", or dislike it as many others done!
+ I hope you enjoy "The Worst of Pink Floyd", or dislike it at all!
