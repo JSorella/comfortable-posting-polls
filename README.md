@@ -156,6 +156,6 @@ common-sense listen-able order:
  "The Worst of Pink Floyd" is the result of many people votes in a listenable way.
  
  I hate to include `What do you want from me`,  `Several Species` and `Another Brick in the Wall pt.2` here, I love that tracks, but this is what people 
- have chose.
+ have chosen.
  
  I hope you enjoy "The Worst of Pink Floyd", or dislike it at all!
