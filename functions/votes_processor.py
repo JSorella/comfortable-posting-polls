@@ -51,7 +51,7 @@ class VotesProcessor(object):
                 album_score = album_raw_score * self.album_k * album_songs_weight_ratio
                 track_raw_score = track["positive_votes"] * self.track_positive_k \
                                 - track["negative_votes"] * self.track_negative_k
-                track_score = track_raw_score * 1 + album_score
+                track_score = track_raw_score * self.track_k + album_score
                 album_updated_tracks.append((track["name"], track_score))
 
             album_updated_tracks.sort(key=lambda item: item[1])
@@ -136,8 +136,8 @@ class VotesProcessor(object):
         self.album_positive_k, self.album_negative_k = self._correct_ratio(self.album_votes)
         self.track_positive_k, self.track_negative_k = self._correct_ratio(self.track_votes)
 
-        total_votes = (sum(self.album_votes), sum(self.track_votes))
-        self.album_k, self.track_k = self._correct_ratio(total_votes)
+        # total_votes = (sum(self.album_votes), sum(self.track_votes))
+        # self.album_k, self.track_k = self._correct_ratio(total_votes)
 
     @staticmethod
     def _correct_ratio(votes):
