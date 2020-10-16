@@ -2,8 +2,12 @@
 
 This project pretends to count in a "fairly" way the polls results made in "[Pink Floyd Comfortably Posting](https://www.facebook.com/groups/ComfortablyPosting)" Facebook group.
 
+After making a huge serious research through the participation of people in this group, 
+I decided to make the `Comfortably Posting Polls Data Processor`, a Python-based program
+ developed to determine which songs conforms the truly & unique Worst of Pink Floyd playlist.
+ 
 This program computes real votes from users in the group and an algorithm (described below) chooses "the most disliked" 
-tracks from the band in the most fairly way.
+tracks from the band in the most fairly way, ordered from most disliked/hated songs to less-disliked ones.
 
 The results tracks were chosen to create the following Spotify playlist:
 https://open.spotify.com/playlist/3IFI2OPM6uNYS4HWu4xVtr?si=oR8BMWVaRtOhvjHa9TmS9w
