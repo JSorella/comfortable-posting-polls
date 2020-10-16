@@ -136,6 +136,9 @@ class VotesProcessor(object):
         self.album_positive_k, self.album_negative_k = self._correct_ratio(self.album_votes)
         self.track_positive_k, self.track_negative_k = self._correct_ratio(self.track_votes)
 
+        total_votes = (sum(self.album_votes), sum(self.track_votes))
+        self.album_k, self.track_k = self._correct_ratio(total_votes)
+
     @staticmethod
     def _correct_ratio(votes):
         positive_ratio = 1
