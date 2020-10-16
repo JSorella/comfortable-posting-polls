@@ -49,9 +49,10 @@ class VotesProcessor(object):
 
             for track in album["tracks"]:
                 album_score = album_raw_score * self.album_k * album_songs_weight_ratio
-                track_raw_score = album_score + track["positive_votes"] * self.track_positive_k \
-                                  - track["negative_votes"] * self.track_negative_k
-                album_updated_tracks.append((track["name"], track_raw_score))
+                track_raw_score = track["positive_votes"] * self.track_positive_k \
+                                - track["negative_votes"] * self.track_negative_k
+                track_score = track_raw_score * 1 + album_score
+                album_updated_tracks.append((track["name"], track_score))
 
             album_updated_tracks.sort(key=lambda item: item[1])
             ranking.extend(album_updated_tracks[:album["max_worst_tracks"]])
