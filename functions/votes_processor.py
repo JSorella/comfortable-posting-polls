@@ -1,4 +1,5 @@
 import os
+from math import ceil
 
 from functions.utils import get_fixture_content, get_tracks_in_json_format, save_dict_to_json_file
 from pathlib import Path
@@ -20,6 +21,9 @@ class VotesProcessor(object):
         self.track_k = 1
 
     def print_albums_ranking(self):
+        """
+        Prints album rankins.
+        """
         ranking = []
         if not self.data:
             self._load_data()
@@ -34,18 +38,23 @@ class VotesProcessor(object):
         for album in ranking:
             print("  * {}: {}".format(*album))
 
-    def _print_tracks_ranking(self):
+    def _generate_worst_tracks_ranking(self):
         ranking = []
 
         for album in self.data:
+            album_updated_tracks = []
             album_raw_score = album["positive_votes"] * self.album_positive_k \
                               - album["negative_votes"] * self.album_negative_k
             album_songs_weight_ratio = 1 / len(album["tracks"])
+
             for track in album["tracks"]:
                 album_score = album_raw_score * self.album_k * album_songs_weight_ratio
                 track_raw_score = album_score + track["positive_votes"] * self.track_positive_k \
                                   - track["negative_votes"] * self.track_negative_k
-                ranking.append((track["name"], track_raw_score))
+                album_updated_tracks.append((track["name"], track_raw_score))
+
+            album_updated_tracks.sort(key=lambda item: item[1])
+            ranking.extend(album_updated_tracks[:album["max_worst_tracks"]])
 
         ranking.sort(key=lambda item: item[1])
 
@@ -68,13 +77,18 @@ class VotesProcessor(object):
 
     def calculate_votes(self):
         self.album_votes = self._calculate_albums_votes()
+        self._update_tracks_number_to_albums()
+
         self.track_votes = self._calculate_tracks_votes()
         self._correct_ratios()
 
         self._print_total_votes()
-        self._print_tracks_ranking()
+        self._generate_worst_tracks_ranking()
 
     def _calculate_albums_votes(self):
+        """
+        This method calculates the total album votes.
+        """
         total_positive_votes = 0
         total_negative_votes = 0
 
@@ -86,6 +100,22 @@ class VotesProcessor(object):
             total_negative_votes += album["negative_votes"]
 
         return total_positive_votes, total_negative_votes
+
+    def _update_tracks_number_to_albums(self):
+        """
+        For each album in self.data, updates the 'max_worst_tracks' parameter.
+        """
+        _, total_negative_votes = self.album_votes
+
+        for index, album in enumerate(self.data):
+            if album["negative_votes"] > 0:
+                tracks_number = len(album["tracks"])
+                album["max_worst_tracks"] = ceil(
+                    tracks_number * album["negative_votes"] / total_negative_votes
+                )
+                if album["name"].lower() == "ummagumma":
+                    album["max_worst_tracks"] += 1
+                self.data[index] = album
 
     def _calculate_tracks_votes(self):
         total_positive_votes = 0
@@ -132,6 +162,7 @@ class VotesProcessor(object):
             album_file_name = album["name"].lower().replace(" ", "_")
             album_file_path = self._get_data_file_path('albums/{}.json'.format(album_file_name))
             album["tracks"] = get_fixture_content(album_file_path)
+            album["max_worst_tracks"] = 1
             self.data.append(album)
 
     def _print_total_votes(self):
