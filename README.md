@@ -1,4 +1,4 @@
-# comfortable-posting-polls
+# Comfortably Posting Polls Data Processor  
 
 This project pretends to count in a "fairly" way the polls results made in "[Pink Floyd Comfortably Posting](https://www.facebook.com/groups/ComfortablyPosting)" Facebook group.
 
