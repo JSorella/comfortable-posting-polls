@@ -1,5 +1,6 @@
 import os
 from functions.messages import get_random_exit_message, get_random_prompt_message
+from functions.tracks_json_generator import TracksJsonGenerator
 from functions.votes_processor import VotesProcessor
 
 
@@ -17,7 +18,7 @@ if __name__ == '__main__':
         if choice == "A":
             processor.print_albums_ranking()
         elif choice == "S":
-            processor.generate_songs_json()
+            TracksJsonGenerator.create()
         elif choice == "V":
             processor.calculate_votes()
         elif choice == "Q":
