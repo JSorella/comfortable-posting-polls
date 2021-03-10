@@ -87,11 +87,11 @@ if __name__ == '__main__':
     while True:
         print("\nWelcome to an Altered Future.")
         print("C - Calculate polls votes.")
-        #print("S - Generate songs dictionary in JSON format.")
+        print("G - Generate songs dictionary in JSON format.")
         print("Q - Quit this program.")
         choice = input("Enter your choice: ").upper()
 
-        if choice == "S":
+        if choice == "G":
             TracksJsonGenerator.create('kg_poll/albums')
         elif choice == "C":
             calculate_and_print_votes('kg_poll/albums')
