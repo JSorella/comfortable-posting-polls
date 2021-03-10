@@ -1,0 +1,55 @@
+{
+  "album_title": "K.G.",
+  "tracks": [
+      {
+          "name": "K.G.L.W. (intro)",
+          "positive_votes": 2,
+          "negative_votes": 44
+      },
+      {
+          "name": "Automation",
+          "positive_votes": 33,
+          "negative_votes": 33
+      },
+      {
+          "name": "Minimum Brain Size",
+          "positive_votes": 92,
+          "negative_votes": 19
+      },
+      {
+          "name": "Straws in the Wind",
+          "positive_votes": 44,
+          "negative_votes": 97
+      },
+      {
+          "name": "Some of Us",
+          "positive_votes": 20,
+          "negative_votes": 133
+      },
+      {
+          "name": "Ontology",
+          "positive_votes": 51,
+          "negative_votes": 25
+      },
+      {
+          "name": "Intrasport",
+          "positive_votes": 113,
+          "negative_votes": 51
+      },
+      {
+          "name": "Oddlife",
+          "positive_votes": 36,
+          "negative_votes": 61
+      },
+      {
+          "name": "Honey",
+          "positive_votes": 58,
+          "negative_votes": 54
+      },
+      {
+          "name": "The Hungry Wolf of Fate",
+          "positive_votes": 23,
+          "negative_votes": 102
+      }
+  ]
+}

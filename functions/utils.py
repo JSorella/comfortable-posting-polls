@@ -1,4 +1,8 @@
 import json
+import os
+from pathlib import Path
+
+DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def file_reader(path):
@@ -21,15 +25,31 @@ def file_writer(path, content):
         fh.write(content)
 
 
-def get_fixture_content(payload_filename):
+def get_fixture_content(payload_filename, folder_path=None):
     """
     Given a fixture filename, returns its content.
     :param payload_filename:    String      Name of the payload to load.
+    :param folder_path:         String      (Optional) Containing folder for the file.
     :return:                    Dict        Payload loaded as a dict
     """
-    file_content = file_reader(payload_filename)
+    file_path = get_absolute_path(payload_filename, folder_path)
+    file_content = file_reader(file_path)
 
     return json.loads(file_content)
+
+
+def get_file_names_in_folder(folder_path, filter_extension=None):
+
+    file_names = os.listdir(get_absolute_path(folder_path))
+
+    if filter_extension:
+        file_names = [
+            filename for filename in file_names if filename.endswith(
+                '.{}'.format(filter_extension)
+            )
+        ]
+
+    return file_names
 
 
 def get_tracks_in_json_format(tracks):
@@ -49,3 +69,11 @@ def get_tracks_in_json_format(tracks):
 def save_dict_to_json_file(dictionary, file_path):
     json_object = json.dumps(dictionary, indent=4)
     file_writer(file_path, json_object)
+
+
+def get_absolute_path(obj_path, folder_path=None):
+    if folder_path:
+        path = (Path(DIR) / '..' / folder_path / obj_path).resolve()
+    else:
+        path = (Path(DIR) / '..' / obj_path).resolve()
+    return path
